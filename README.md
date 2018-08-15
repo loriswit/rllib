@@ -19,5 +19,5 @@ Once done, the compiled library can be found in the *lib* subfolder.
 
 ## Documentation
 
-You can find tutorials and information about how the library works on the project [wiki](https://github.com/olybri/rllib/wiki). You can also check the [documentation](https://olybri.github.io/rllib) of classes and functions.
+You can find tutorials and information about how the library works on the project [wiki](https://github.com/olybri/rllib/wiki). You can also check the [documentation](https://olybri.github.io/rllib/annotated.html) of classes and functions.
 
