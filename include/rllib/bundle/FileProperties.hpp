@@ -10,7 +10,7 @@ namespace rl
 /**
  * This structure holds properties about a file in the bundle.
  */
-struct FileProperties
+struct RL_API FileProperties
 {
     /**
      * An unknown value at the start of the structure.

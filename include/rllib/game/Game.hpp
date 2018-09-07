@@ -11,7 +11,7 @@ namespace rl
  * This class represents the game itself.
  * It provides features to extract, patch or run scenes in the game engine.
  */
-class Game
+class RL_API Game
 {
 public:
     /**

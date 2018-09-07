@@ -12,7 +12,7 @@ namespace rl
 /**
  * The file reader provides features to read bytes from a binary file.
  */
-class FileReader
+class RL_API FileReader
 {
 public:
     /**

@@ -63,10 +63,9 @@ void Game::removePatch()
 
 int Game::run(const FilePath & path)
 {
-    std::string cmdLine = "cd " + m_path.directory
-            + " && \"" + m_path.filename + "\" map=" + path;
+    std::string cmdLine = "cd " + m_path.directory + " && \"" + m_path.filename + "\" map=" + path;
     
-    auto stream = popen(cmdLine.c_str(), "r");
+    auto stream = RL_POPEN(cmdLine.c_str(), "r");
     if(!stream)
         throw std::runtime_error("could not run command " + cmdLine);
     
@@ -77,7 +76,7 @@ int Game::run(const FilePath & path)
     while(fgets(buffer.data(), LINE_MAX, stream))
         std::cout << "> " << buffer.data() << std::flush;
     
-    auto status = pclose(stream);
+    auto status = RL_PCLOSE(stream);
     std::cout << "Game exited with code " << std::hex << std::showbase << status << std::endl;
     
     return status;

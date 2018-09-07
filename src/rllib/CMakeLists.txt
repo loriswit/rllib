@@ -20,4 +20,9 @@ file(GLOB_RECURSE RLLIB_SRC_FILES ${RLLIB_SRC_DIR}/*)
 
 add_library(rl ${RLLIB_SRC_FILES})
 target_include_directories(rl PUBLIC ${PROJECT_SOURCE_DIR}/include)
-target_link_libraries(rl z)
+target_link_libraries(rl PRIVATE ${CONAN_LIBS})
+target_compile_definitions(rl PRIVATE RL_BUILD)
+
+if(NOT BUILD_SHARED_LIBS)
+    target_compile_definitions(rl PUBLIC RL_STATIC)
+endif()

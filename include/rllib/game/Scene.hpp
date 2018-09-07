@@ -18,7 +18,7 @@ namespace rl
  * The default algorithm can be replaced by another one by modifying the static variable rl::Scene::locator,
  * which is a callable object. A few algorithms are available in the namespace rl::locator.
  */
-class Scene
+class RL_API Scene
 {
 public:
     /**

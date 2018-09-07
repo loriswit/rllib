@@ -3,15 +3,18 @@
 namespace
 {
 
-std::string normalize(const std::string & dir)
+std::string normalize(std::string path)
 {
-    auto directory = dir;
+    std::replace(path.begin(), path.end(), '\\', '/');
+    return path;
+}
+
+std::string withTrailingSlash(std::string path)
+{
+    if(!path.empty() && path.back() != '/')
+        path += '/';
     
-    std::replace(directory.begin(), directory.end(), '\\', '/');
-    if(!directory.empty() && directory.back() != '/')
-        directory += '/';
-    
-    return directory;
+    return path;
 }
 
 } // namespace
@@ -19,19 +22,18 @@ std::string normalize(const std::string & dir)
 namespace rl
 {
 
-FilePath::FilePath(std::string dir, std::string name)
+FilePath::FilePath(const std::string & dir, const std::string & name)
 {
-    directory = std::move(dir);
-    filename = std::move(name);
-    
-    directory = normalize(directory);
+    directory = withTrailingSlash(normalize(dir));
+    filename = normalize(name);
 }
 
 FilePath::FilePath(const std::string & path)
 {
-    auto split = path.find_last_of('/') + 1;
+    auto normalized = normalize(path);
+    auto split = normalized.find_last_of('/') + 1;
     
-    directory = normalize(path.substr(0, split));
+    directory = withTrailingSlash(normalized.substr(0, split));
     filename = path.substr(split);
 }
 

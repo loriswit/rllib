@@ -13,7 +13,7 @@ namespace rl
  * A bundle is a collection of files packed in a big single file. It is used to store all the game assets.
  * In particular, this is where scene are being extracted from the game.
  */
-class Bundle
+class RL_API Bundle
 {
 public:
     /**

@@ -10,7 +10,7 @@
 namespace rl
 {
 
-class ByteStream;
+class RL_API ByteStream;
 
 template<typename T>
 using EnableIfNumeric = std::enable_if_t<std::is_arithmetic_v<T>>;
@@ -35,7 +35,7 @@ using EnableIfByteStream = std::enable_if_t<std::is_same_v<T, ByteStream>>;
  * This class represents a data stream containing a variable number of bytes.
  * It provides features to extract and write values from and into the stream.
  */
-class ByteStream
+class RL_API ByteStream
 {
 public:
     /**

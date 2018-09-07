@@ -12,7 +12,7 @@ namespace rl
 /**
  * The file reader provides features to write bytes into a binary file.
  */
-class FileWriter
+class RL_API FileWriter
 {
 public:
     /**

@@ -19,7 +19,7 @@ constexpr long double PI = 3.141592653589793238463;
  * rl::Angle b = 90_deg; // constructs an angle in degrees
  * @endcode
  */
-struct Angle
+struct RL_API Angle
 {
     /**
      * The angle in radians.

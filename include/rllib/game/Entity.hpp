@@ -16,7 +16,7 @@ namespace rl
  * Each entity starts with common properties (name, position, scale, rotation) and is then followed by
  * some data of variable length that contains properties specific to each entity.
  */
-struct Entity
+struct RL_API Entity
 {
     /**
      * An unknown property that starts the entity data.

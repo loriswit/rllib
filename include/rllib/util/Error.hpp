@@ -1,12 +1,14 @@
 #ifndef RLLIB_ERROR_HPP
 #define RLLIB_ERROR_HPP
 
+#include <rllib/Config.hpp>
+
 #include <string>
 
-#ifdef NDEBUG
-#define RL_ASSERT(exp, msg) ((void) 0)
+#ifdef RL_DEBUG
+    #define RL_ASSERT(exp, msg) if (!(exp)) rl::abort((msg), #exp, RL_FUNCTION, __FILE__, __LINE__)
 #else
-#define RL_ASSERT(exp, msg) if (!(exp)) rl::abort((msg), #exp, __PRETTY_FUNCTION__, __FILE__, __LINE__)
+    #define RL_ASSERT(exp, msg) ((void) 0)
 #endif
 
 namespace rl

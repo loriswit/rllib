@@ -9,7 +9,7 @@ namespace rl
 /**
  * Structure representing the location of an entity in a scene file.
  */
-struct EntityLocation
+struct RL_API EntityLocation
 {
     /**
      * The offset where the entity data starts.

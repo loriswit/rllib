@@ -5,7 +5,7 @@ if(NOT DEFINED CMAKE_BUILD_TYPE)
 endif()
 
 project(rllib)
-set(RLLIB_VERSION 0.1)
+set(RLLIB_VERSION 0.1.1)
 
 set(CMAKE_CXX_STANDARD 17)
 

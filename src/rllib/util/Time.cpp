@@ -1,13 +1,12 @@
 #include "Time.hpp"
 
+#include <rllib/Config.hpp>
+
 #include <chrono>
 
-#ifdef _WIN32
-
-#include <timezoneapi.h>
-#include <fileapi.h>
-#include <sstream>
-
+#ifdef RL_OS_WINDOWS
+    #include <windows.h>
+    #include <sstream>
 #endif
 
 namespace rl
@@ -21,7 +20,7 @@ int64_t currentTime()
     return time / 100 + 116'444'736'000'000'000;
 }
 
-#ifdef _WIN32
+#ifdef RL_OS_WINDOWS
 
 std::string timeToString(int64_t time)
 {

@@ -9,7 +9,7 @@ namespace rl
 /**
  * Structure containing a normalized file path.
  */
-struct FilePath
+struct RL_API FilePath
 {
     /**
      * The directory of the file.
@@ -32,7 +32,7 @@ struct FilePath
      * @param dir The directory of the file
      * @param name The name of the file
      */
-    FilePath(std::string dir, std::string name);
+    FilePath(const std::string & dir, const std::string & name);
     
     /**
      * Creates a file path.

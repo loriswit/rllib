@@ -12,7 +12,7 @@ namespace rl
  * @tparam T The type of the vector components
  */
 template<typename T>
-struct Vector2
+struct RL_API Vector2
 {
     /**
      * The horizontal component of the vector.
