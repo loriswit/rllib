@@ -104,7 +104,6 @@ Bundle Bundle::create(FilePath bundlePath, const std::vector<std::pair<FilePath,
     
     for(const auto &[path, data] : files)
     {
-        
         FileProperties fileInfo;
         fileInfo.path = path;
         fileInfo.size = static_cast<uint32_t>(data.size());
@@ -113,7 +112,7 @@ Bundle Bundle::create(FilePath bundlePath, const std::vector<std::pair<FilePath,
         
         bundle.m_fileList.emplace_back(fileInfo, buffer.tell());
         buffer << fileInfo;
-        nextOffset = fileInfo.size;
+        nextOffset += fileInfo.size;
     }
     
     bundle.m_path = std::move(bundlePath);
